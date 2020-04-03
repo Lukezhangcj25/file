@@ -1,4 +1,4 @@
-package com.info.sms.sms.controller;
+package com.info.sms.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
