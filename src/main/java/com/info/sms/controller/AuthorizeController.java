@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.text.SimpleDateFormat;
+import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
@@ -29,13 +31,14 @@ public class AuthorizeController {
     @Value("${server.Redirect.uri}")
     private String Redirecturi;
 
-    @Autowired
+    @Autowired(required = false)
     private UserMapper userMapper;
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
-                           HttpServletRequest request){
+                           HttpServletRequest request,
+                           HttpServletResponse response){
         // HttpServletRequest request等于js+servlet的使用方式
         // @RequestParam 完成gitHub2个参数的接收
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
@@ -50,17 +53,19 @@ public class AuthorizeController {
         // System.out.println(user.getName());
         if(githubUser != null){
             User user = new User();
-            user.setToken(UUID.randomUUID().toString());
+            String token = UUID.randomUUID().toString();
+            user.setToken(token);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.getGmtModified(user.getGmtCreate());
             userMapper.insert(user);
-            System.out.println(user.toString());
+
+            response.addCookie(new Cookie("token",token));
+            // System.out.println(user.toString());
             // 登录成功，写cookie和session
+            // request.getSession().setAttribute("user",githubUser);
 
-
-            request.getSession().setAttribute("user",githubUser);
             // url显示index地址而不是带有get参数的地址
             return "redirect:/";
         }else{
