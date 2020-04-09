@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/sms.css"/>
     <script src="js/bootstrap.min.js" type="application/javascript"></script>
 </head>
 <body>
@@ -43,44 +44,47 @@
             </ul>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-sx-12">
-                <span class="glyphicon glyphicon-log-in" aria-hidden="true"> 发起</span>
-                <hr>
-                <form action="">
-                    <div class="form-group">
-                        <label for="title">问题标题(简单扼要)：</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题......">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">问题补充(必须，请参照右侧提示)：</label>
-                        <textarea class="form-control" name="description" id="description" cols="30"
-                                  rows="10"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="tag">添加标签：</label>
-                        <input type="text" class="form-control" id="tag" name="tag" placeholder="请输入标签，以，隔开">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">确认发送</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-3 col-md-12 col-sm-12 col-sx-12">
-                <h3>问题发起规则：</h3>
-                    1、什么是【看图购】：
-                　　看图购是给卖家在iFashion平台发布某一款服饰搭配的工具，由1-9张全身搭配的图片+140字内的文案组成，图片中可以加入对应商品的链接。
-                　　2、为什么要发【看图购】
-                　　a.【看图购】强调搭配，改变目前单品陈列的形式，给消费者整体搭配的视觉体验，提升全套购买的转化;
-                　　b.多一个外部流量渠道。目前iFashion所有展现看图购的地方(除动态外)，均是以个性化形式展现，也就意味着日常保持着良好的发布习惯，在iFashion平台展现的概率也越大;
-                　　c.营销活动，例如音乐节、深井冰、潮我看(上海站)等，商品的展现都是以【看图购】形式出现的;同时，今年营销活动中都有看图购发布数量的报名规则限制，别等到活动报名的时候因为这个原因无法报名;
-                　　2、发布频率如何
-                　　尽量保持每天发布，具体发布数量根据店铺的商品数量评估(包括买家秀)，最好是每天早中晚分时段发布，避免一下刷屏的尴尬。
-                　　举例，一个卖家能够每周上新35款，按一周七天计算，每天平均发布5条看图购，当周把所有的新款搭配都发布上来;买家秀同理，视具体数量情况决定。
-            </div>
+</nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-sx-12">
+            <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true"> 发起</span></h2>
+            <hr>
+            <form action="/publish" method="post">
+                <div class="form-group">
+                    <label for="title">问题标题(简单扼要)：</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题......">
+                </div>
+                <div class="form-group">
+                    <label for="description">问题补充(必须，请参照右侧提示)：</label>
+                    <textarea class="form-control" name="description" id="description" cols="30"
+                              rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tag">添加标签：</label>
+                    <input type="text" class="form-control" id="tag" name="tag" placeholder="请输入标签，以，隔开">
+                </div>
+                <div class="form-group">
+                        <a class="text-dange" th:text="${errorUserIsNull}"></a>
+                        <a class="text-dange" th:text="${errorTitleIsNull}"></a>
+                        <a class="text-dange" th:text="${errorTagIsNull}"></a>
+                    <button type="submit" class="btn btn-success btn-publish">确认发送</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-sx-12">
+            <h3>问题发起规则：</h3>
+            <h5>1、什么是XXXX：</h5>
+            看图购是给卖家在iFashion平台发布某一款服饰搭配的工具，由1-9张全身搭配的图片+140字内的文案组成，图片中可以加入对应商品的链接。<br>
+            <h5>2、为什么要发</h5>
+            a.强调搭配，改变目前单品陈列的形式，给消费者整体搭配的视觉体验，提升全套购买的转化;<br>
+            b.多一个外部流量渠道。目前iFashion所有展现看图购的地方(除动态外)，均是以个性化形式展现，也就意味着日常保持着良好的发布习惯，在iFashion平台展现的概率也越大;<br>
+            c.营销活动，例如音乐节、深井冰、潮我看(上海站)等，商品的展现都是以形式出现的;同时，今年营销活动中都有看图购发布数量的报名规则限制，别等到活动报名的时候因为这个原因无法报名;<br>
+            <h5>2、发布频率如何</h5>
+            尽量保持每天发布，具体发布数量根据店铺的商品数量评估(包括买家秀)，最好是每天早中晚分时段发布，避免一下刷屏的尴尬。<br>
+            举例，一个卖家能够每周上新35款，按一周七天计算，每天平均发布5条看图购，当周把所有的新款搭配都发布上来;买家秀同理，视具体数量情况决定。<br>
         </div>
     </div>
-</nav>
+</div>
 </body>
 </html>

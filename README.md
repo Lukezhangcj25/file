@@ -1,4 +1,4 @@
-[git]:https://github.com/
+[github]:https://github.com/
 [spring 官网]:https://spring.io/guides
 [bootstrap]:https://v3.bootcss.com/components/#navbar
 [OkHttp]:https://square.github.io/okhttp/
