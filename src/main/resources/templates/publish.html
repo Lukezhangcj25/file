@@ -28,6 +28,9 @@
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
+                <li th:if="${session.user != null}">
+                    <a href="/publish">发布</a>
+                </li>
                 <li class="dropdown" th:if="${session.user != null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false" th:text="${session.user.getName()}"><span class="caret"></span></a>
@@ -64,11 +67,16 @@
                     <label for="tag">添加标签：</label>
                     <input type="text" class="form-control" id="tag" name="tag" placeholder="请输入标签，以，隔开">
                 </div>
-                <div class="form-group">
-                        <a class="text-danger" th:text="${errorUserIsNull}"></a>
-                        <a class="text-danger" th:text="${errorTitleIsNull}"></a>
-                        <a class="text-danger" th:text="${errorTagIsNull}"></a>
-                    <button type="submit" class="btn btn-success btn-publish">确认发送</button>
+                <div class="container-fluid main">
+                    <div class="row">
+                        <div class="text-danger col-lg-9 col-md-12 col-sm-12 col-xs-12" th:text="${error}"
+                             th:if="${error != null}"></div>
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-success btn-publish">
+                                确认发送
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
