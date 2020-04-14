@@ -17,7 +17,7 @@
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">社区</span>
             </button>
-            <a class="navbar-brand" href="#">社区</a>
+            <a class="navbar-brand" href="/">社区</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,7 +29,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${session.user != null}">
-                    <a href="/publish">发布</a>
+                    <a href="/publish"> 发布</a>
                 </li>
                 <li class="dropdown" th:if="${session.user != null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -51,7 +51,9 @@
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-sx-12">
-            <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true"> 发起</span></h2>
+            <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true" style="margin-right: 5px;transform: translateY(3px)"></span>
+                分发
+            </h2>
             <hr>
             <form action="/publish" method="post">
                 <div class="form-group">

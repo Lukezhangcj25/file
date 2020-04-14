@@ -10,9 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import lombok.Data;
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
@@ -25,7 +24,7 @@ public class AuthorizeController {
     private GithubProvider githubProvider;
 
     @Value("${server.Client.id}")
-    private String Clientid;
+    private String Clientid ;
     @Value("${server.Client.secret}")
     private String Clientsecret;
     @Value("${server.Redirect.uri}")
@@ -37,7 +36,6 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
-                           HttpServletRequest request,
                            HttpServletResponse response){
         // HttpServletRequest request等于js+servlet的使用方式
         // @RequestParam 完成gitHub2个参数的接收
@@ -58,7 +56,8 @@ public class AuthorizeController {
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
-            user.getGmtModified(user.getGmtCreate());
+            user.setGmtModified(user.getGmtCreate());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             userMapper.insert(user);
             Cookie cookie = new Cookie("token", token);
             response.addCookie(cookie);

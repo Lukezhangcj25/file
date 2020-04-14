@@ -42,10 +42,10 @@ public class PublishController {
         if (title == null || title == "") {
             model.addAttribute("error", "标题不能为空!");
             return "publish";
-        }else if (description == null || description == "") {
+        } else if (description == null || description == "") {
             model.addAttribute("error", "问题补充不能为空!");
             return "publish";
-        }else if (tag == null || tag == "") {
+        } else if (tag == null || tag == "") {
             model.addAttribute("error", "标签不能为空!");
             return "publish";
         }
@@ -56,14 +56,16 @@ public class PublishController {
 
         User user = null;
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("token")) {
-                String token = cookie.getValue();
-                user = userMapper.findByToken(token);
-                if (user != null) {
-                    request.getSession().setAttribute("user", user);
+        if (cookies != null && cookies.length != 0) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("token")) {
+                    String token = cookie.getValue();
+                    user = userMapper.findByToken(token);
+                    if (user != null) {
+                        request.getSession().setAttribute("user", user);
+                    }
+                    break;
                 }
-                break;
             }
         }
 
@@ -72,16 +74,16 @@ public class PublishController {
             model.addAttribute("error", "用户未登录!");
             return "publish";
         }
-            Question question = new Question();
-            question.setTitle(title);
-            question.setDescription(description);
-            question.setTag(tag);
-            question.setCreater(user.getId());
-            question.setGmtCreate(System.currentTimeMillis());
-            question.setModifier(user.getId());
-            question.setGmtModified(question.getGmtCreate());
-            questionMapper.create(question);
-            return "redirect:/";
+        Question question = new Question();
+        question.setTitle(title);
+        question.setDescription(description);
+        question.setTag(tag);
+        question.setCreater(user.getId());
+        question.setGmtCreate(System.currentTimeMillis());
+        question.setModifier(user.getId());
+        question.setGmtModified(question.getGmtCreate());
+        questionMapper.create(question);
+        return "redirect:/";
 
     }
 }

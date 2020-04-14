@@ -1,12 +1,13 @@
-package com.info.sms.model;
+package com.info.sms.dto;
 
+import com.info.sms.model.User;
 import lombok.Data;
 
 /**
- * Created by Luke 2020/4/9 13:17
+ * Created by Luke 2020/4/13 17:24
  */
 @Data
-public class Question {
+public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
@@ -18,4 +19,6 @@ public class Question {
     private Integer creater;
     private Long gmtModified;
     private Integer modifier;
+    private User user;
+
 }
