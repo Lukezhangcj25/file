@@ -51,28 +51,29 @@
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-sx-12">
-            <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true" style="margin-right: 5px;transform: translateY(3px)"></span>
-                分发
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true" style="margin-right: 5px;transform: translateY(3px)"></span>
+                发布
             </h2>
             <hr>
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要)：</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题......">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title" placeholder="请输入标题......">
                 </div>
                 <div class="form-group">
                     <label for="description">问题补充(必须，请参照右侧提示)：</label>
-                    <textarea class="form-control" name="description" id="description" cols="30"
+                    <textarea class="form-control" th:text="${description}" name="description" id="description" cols="30"
                               rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="tag">添加标签：</label>
-                    <input type="text" class="form-control" id="tag" name="tag" placeholder="请输入标签，以，隔开">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="请输入标签，以，隔开">
                 </div>
                 <div class="container-fluid main">
                     <div class="row">
-                        <div class="text-danger col-lg-9 col-md-12 col-sm-12 col-xs-12" th:text="${error}"
-                             th:if="${error != null}"></div>
+                        <div class="text-danger col-lg-9 col-md-12 col-sm-12 col-xs-12"
+                             th:text="${error}" th:if="${error != null}">
+                        </div>
                         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                             <button type="submit" class="btn btn-success btn-publish">
                                 确认发送
