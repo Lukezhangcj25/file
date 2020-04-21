@@ -15,12 +15,12 @@ public interface UserMapper {
     User findByToken(@Param("token") String token);
 
     @Select("SELECT * FROM user where id = #{id}")
-//    @Results({
-//            @Result(property = "accountId",column = "account_id"),
-//            @Result(property = "gmtCreate",column = "gmt_create"),
-//            @Result(property = "gmtModified",column = "gmt_modified"),
-//            @Result(property = "avatarUrl",column = "avatar_url")
-//    })
     User findById(@Param("id") Integer id);
+
+    @Select("SELECT COUNT(1) FROM user where account_id = #{accountId}")
+    Integer count(@Param("accountId") String accountId);
+
+    @Update("UPDATE user set token=#{token},gmt_modified=#{gmtModified} where account_id=#{acconutId}")
+    void updateToken(@Param("token")String token, @Param("gmtModified") Long gmtModified, @Param("acconutId") String acconutId);
 
 }

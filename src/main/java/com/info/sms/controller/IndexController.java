@@ -1,7 +1,6 @@
 package com.info.sms.controller;
 
 import com.info.sms.dto.PaginationDTO;
-import com.info.sms.dto.QuestionDTO;
 import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.User;
 import com.info.sms.servie.QuestionService;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * Created by Luke 2020/3/30 10:34

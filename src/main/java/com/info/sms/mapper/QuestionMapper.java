@@ -14,16 +14,16 @@ public interface QuestionMapper {
     void create(Question question);
 
     @Select("SELECT * FROM question limit #{offset},#{size}")
-//    @Results({
-//            @Result(property = "commentCount", column = "comment_count"),
-//            @Result(property = "viewCount", column = "view_count"),
-//            @Result(property = "likeCount", column = "like_count"),
-//            @Result(property = "gmtCreate", column = "gmt_create"),
-//            @Result(property = "gmtModified", column = "gmt_modified")
-//    })
     List<Question> list(@Param(value = "offset") Integer offset, @Param(value = "size") Integer size);
 
 
     @Select("SELECT COUNT(1) FROM question")
     Integer count();
+
+
+    @Select("SELECT * FROM question where creater = #{userId} limit #{offset},#{size}")
+    List<Question> listByUserId(@Param(value = "userId") int userId, @Param(value = "offset") Integer offset, @Param(value = "size") Integer size);
+
+    @Select("SELECT COUNT(1) FROM question where creater = #{userId}")
+    Integer countByUserId(@Param(value = "userId") int userId);
 }

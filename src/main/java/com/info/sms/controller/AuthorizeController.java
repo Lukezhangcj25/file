@@ -8,6 +8,7 @@ import com.info.sms.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import lombok.Data;
@@ -36,7 +37,8 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
-                           HttpServletResponse response){
+                           HttpServletResponse response,
+                           Model model){
         // HttpServletRequest request等于js+servlet的使用方式
         // @RequestParam 完成gitHub2个参数的接收
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
@@ -50,17 +52,33 @@ public class AuthorizeController {
         GithubUser githubUser = githubProvider.getUser(accessToken);
         // System.out.println(user.getName());
         if(githubUser != null && githubUser.getId() != null){
+
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setName(githubUser.getName());
-            user.setAccountId(String.valueOf(githubUser.getId()));
+            Long acconutId = githubUser.getId();
+            user.setAccountId(String.valueOf(acconutId));
             user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModified(user.getGmtCreate());
             user.setAvatarUrl(githubUser.getAvatar_url());
-            userMapper.insert(user);
-            Cookie cookie = new Cookie("token", token);
-            response.addCookie(cookie);
+
+            int count = userMapper.count(String.valueOf(acconutId));
+            if(count == 0){
+                user.setGmtModified(user.getGmtCreate());
+                userMapper.insert(user);
+            }else if(count == 1){
+                Long gmtModified = System.currentTimeMillis();
+                String acc = String.valueOf(acconutId);
+                userMapper.updateToken(token,gmtModified,acc);
+            }else{
+                model.addAttribute("error","登录验证验证失败!");
+            }
+
+            if(token != null){
+                Cookie cookie = new Cookie("token", token);
+                response.addCookie(cookie);
+            }
+
             // System.out.println(user.toString());
             // 登录成功，写cookie和session
             // request.getSession().setAttribute("user",githubUser);
