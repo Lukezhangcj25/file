@@ -1,6 +1,7 @@
 package com.info.sms.controller;
 
 import com.info.sms.dto.PaginationDTO;
+import com.info.sms.mapper.QuestionMapper;
 import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.User;
 import com.info.sms.servie.QuestionService;
@@ -25,6 +26,8 @@ public class ProfileController {
     @Autowired(required = false)
     private QuestionService questionService;
 
+    @Autowired(required = false)
+    private QuestionMapper questionMapper;
 
     @GetMapping("/profile/{action}")
     public String profile(HttpServletRequest request,
@@ -65,6 +68,10 @@ public class ProfileController {
 
         PaginationDTO pagination = questionService.list(user.getId(),page,size);
         model.addAttribute("pagination",pagination);
+
+        int totalCount = questionMapper.countByUserId(user.getId());
+        model.addAttribute("totalCount",totalCount);
+
         return "profile";
     }
 }

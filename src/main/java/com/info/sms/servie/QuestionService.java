@@ -26,19 +26,29 @@ public class QuestionService {
     private UserMapper userMapper;
 
 
+
     public PaginationDTO list(Integer page, Integer size) {
 
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalCount = questionMapper.count();
-        paginationDTO.setPagination(totalCount,page,size);
+        Integer totalPage;
+
+        // 如果总数据数  取余 每页显示数量为0，页数为数据总数除以每页数量的值
+        // 如果总数据数  取余 每页显示数量不为0，页数为数据总数除以每页数量的值 + 1
+        if (totalCount % size == 0) {
+            totalPage = totalCount / size;
+        } else {
+            totalPage = totalCount / size + 1;
+        }
+
         // 容错校验，当URL修改page不在有效区间内，赋予对应逻辑默认值
         if (page < 1) {
             page = 1;
         }
-        if (page > paginationDTO.getTotalPage()) {
-            page = paginationDTO.getTotalPage();
+        if (page > totalPage) {
+            page = totalPage;
         }
-
+        paginationDTO.setPagination(totalPage,page);
 
         Integer offset = size * (page-1);
         List<Question> questions = questionMapper.list(offset,size);
@@ -59,14 +69,24 @@ public class QuestionService {
     public PaginationDTO list(int userId, Integer page, Integer size) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalCount = questionMapper.countByUserId(userId);
-        paginationDTO.setPagination(totalCount,page,size);
+        Integer totalPage;
+
+        // 如果总数据数  取余 每页显示数量为0，页数为数据总数除以每页数量的值
+        // 如果总数据数  取余 每页显示数量不为0，页数为数据总数除以每页数量的值 + 1
+        if (totalCount % size == 0) {
+            totalPage = totalCount / size;
+        } else {
+            totalPage = totalCount / size + 1;
+        }
+
         // 容错校验，当URL修改page不在有效区间内，赋予对应逻辑默认值
         if (page < 1) {
             page = 1;
         }
-        if (page > paginationDTO.getTotalPage()) {
-            page = paginationDTO.getTotalPage();
+        if (page > totalPage) {
+            page = totalPage;
         }
+        paginationDTO.setPagination(totalPage,page);
 
 
         Integer offset = size * (page-1);
