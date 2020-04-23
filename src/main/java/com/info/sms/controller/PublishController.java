@@ -1,7 +1,6 @@
 package com.info.sms.controller;
 
 import com.info.sms.mapper.QuestionMapper;
-import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.Question;
 import com.info.sms.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -22,9 +20,6 @@ public class PublishController {
 
     @Autowired(required = false)
     private QuestionMapper questionMapper;
-
-    @Autowired(required = false)
-    private UserMapper userMapper;
 
     @GetMapping("/publish")
     public String gublish() {
@@ -54,21 +49,8 @@ public class PublishController {
             return "publish";
         }
 
+        User user = (User) request.getSession().getAttribute("user");
 
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null && cookies.length != 0) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-            }
-        }
 
 
         if (user == null) {

@@ -2,7 +2,6 @@ package com.info.sms.controller;
 
 import com.info.sms.dto.PaginationDTO;
 import com.info.sms.mapper.QuestionMapper;
-import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.User;
 import com.info.sms.servie.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -20,9 +18,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class ProfileController {
-    @Autowired(required = false)
-    private UserMapper userMapper;
-
     @Autowired(required = false)
     private QuestionService questionService;
 
@@ -35,20 +30,8 @@ public class ProfileController {
                           @RequestParam(name="page",defaultValue = "1") Integer page,
                           @RequestParam(name="size",defaultValue = "5") Integer size,
                           Model model) {
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null && cookies.length != 0) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-            }
-        }
+
+        User user = (User)request.getSession().getAttribute("user");
 
         if(user==null){
             return "redirect:/";
