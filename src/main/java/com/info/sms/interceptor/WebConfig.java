@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
@@ -21,7 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
-        registry.addInterceptor(new ResourceInterceptor()).excludePathPatterns("/static/**");
+//        registry.addInterceptor(new ResourceInterceptor()).excludePathPatterns("/static/**");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class WebConfig implements WebMvcConfigurer {
         // 设置文件上传的文件不拦截
         // registry.addResourceHandler("/upload/**").addResourceLocations("file:"+ TaleUtils.getUplodFilePath()+"upload/");
         //第一个方法设置访问路径前缀，第二个方法设置资源路径
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+//        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 }
 
