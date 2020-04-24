@@ -1,5 +1,6 @@
 package com.info.sms.mapper;
 
+
 import com.info.sms.model.Question;
 import org.apache.ibatis.annotations.*;
 
@@ -26,4 +27,7 @@ public interface QuestionMapper {
 
     @Select("SELECT COUNT(1) FROM question where creater = #{userId}")
     Integer countByUserId(@Param(value = "userId") int userId);
+
+    @Select("SELECT * FROM question where id = #{id}")
+    Question getById(@Param(value = "id") Integer id);
 }
