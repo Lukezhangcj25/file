@@ -17,10 +17,8 @@ public interface QuestionMapper {
     @Select("SELECT * FROM question ORDER BY gmt_modified desc limit #{offset},#{size}")
     List<Question> list(@Param(value = "offset") Integer offset, @Param(value = "size") Integer size);
 
-
     @Select("SELECT COUNT(1) FROM question")
     Integer count();
-
 
     @Select("SELECT * FROM question where creater = #{userId} limit #{offset},#{size}")
     List<Question> listByUserId(@Param(value = "userId") int userId, @Param(value = "offset") Integer offset, @Param(value = "size") Integer size);
