@@ -18,9 +18,12 @@ public interface UserMapper {
     User findById(@Param("id") Integer id);
 
     @Select("SELECT COUNT(1) FROM user where account_id = #{accountId}")
-    Integer count(@Param("accountId") String accountId);
+    Integer findByAccountIdCount(@Param("accountId") String accountId);
 
-    @Update("UPDATE user set token=#{token},gmt_modified=#{gmtModified} where account_id=#{acconutId}")
-    void updateToken(@Param("token")String token, @Param("gmtModified") Long gmtModified, @Param("acconutId") String acconutId);
+    @Select("SELECT * FROM user where account_id = #{accountId}")
+    User findByAccountId(@Param("accountId") String accountId);
+
+    @Update("UPDATE user set name=#{name},token=#{token},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl} where id=#{id}")
+    void updateUser(User user);
 
 }

@@ -14,7 +14,7 @@ public interface QuestionMapper {
     @Insert("INSERT INTO question (title,description,tag,gmt_create,creater,gmt_modified,modifier) VALUES(#{title},#{description},#{tag},#{gmtCreate},#{creater},#{gmtModified},#{modifier})")
     void create(Question question);
 
-    @Select("SELECT * FROM question limit #{offset},#{size}")
+    @Select("SELECT * FROM question ORDER BY gmt_modified desc limit #{offset},#{size}")
     List<Question> list(@Param(value = "offset") Integer offset, @Param(value = "size") Integer size);
 
 
@@ -30,4 +30,7 @@ public interface QuestionMapper {
 
     @Select("SELECT * FROM question where id = #{id}")
     Question getById(@Param(value = "id") Integer id);
+
+    @Update("UPDATE question SET title = #{title},description = #{description},tag = #{tag},modifier=#{modifier},gmt_modified=#{gmtModified} where id = #{id}")
+    void update(Question question);
 }

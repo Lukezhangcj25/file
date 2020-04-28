@@ -6,6 +6,7 @@ import com.info.sms.mapper.QuestionMapper;
 import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.Question;
 import com.info.sms.model.User;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,6 @@ public class QuestionService {
 
     @Autowired(required = false)
     private UserMapper userMapper;
-
 
 
     public PaginationDTO list(Integer page, Integer size) {
@@ -112,5 +112,21 @@ public class QuestionService {
         User user = userMapper.findById(question.getCreater());
         questionDTO.setUser(user);
         return questionDTO;
+    }
+
+    public void createOrUpdate(Question question) {
+        User user = new User();
+        if(question.getId() == null){
+            // 创建新问题
+            question.setCreater(user.getId());
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setModifier(user.getId());
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.create(question);
+        }else{
+            question.setModifier(user.getId());
+            question.setGmtModified(System.currentTimeMillis());
+            questionMapper.update(question);
+        }
     }
 }
