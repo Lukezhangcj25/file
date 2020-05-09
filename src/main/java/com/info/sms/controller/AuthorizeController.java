@@ -2,7 +2,6 @@ package com.info.sms.controller;
 
 import com.info.sms.dto.AccessTokenDTO;
 import com.info.sms.dto.GithubUser;
-import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.User;
 import com.info.sms.provider.GithubProvider;
 import com.info.sms.servie.UserService;
@@ -34,6 +33,8 @@ public class AuthorizeController {
 
     @Autowired(required = false)
     private UserService userService;
+
+
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
@@ -82,4 +83,6 @@ public class AuthorizeController {
         response.addCookie(cookie);
         return "redirect:/";
     }
+
+    
 }

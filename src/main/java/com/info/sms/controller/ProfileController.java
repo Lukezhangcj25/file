@@ -2,6 +2,7 @@ package com.info.sms.controller;
 
 import com.info.sms.dto.PaginationDTO;
 import com.info.sms.mapper.QuestionMapper;
+import com.info.sms.model.QuestionExample;
 import com.info.sms.model.User;
 import com.info.sms.servie.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class ProfileController {
         PaginationDTO pagination = questionService.list(user.getId(),page,size);
         model.addAttribute("pagination",pagination);
 
-        int totalCount = questionMapper.countByUserId(user.getId());
+        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
         model.addAttribute("totalCount",totalCount);
 
         return "profile";

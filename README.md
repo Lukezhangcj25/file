@@ -1,3 +1,4 @@
+##文档
 [github]:https://github.com/
 [spring 官网]:https://spring.io/guides
 [bootstrap]:https://v3.bootcss.com/components/#navbar
@@ -10,3 +11,7 @@
 [Lombok]:https://projectlombok.org/
 [thymeleaf]:https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-theach
 [Spring MVC]:https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html#mvc-handlermapping-interceptor
+
+##命令
+[flyway]:mvn flyway:migrate
+[mybatis]:mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
