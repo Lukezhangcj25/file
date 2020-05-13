@@ -4,6 +4,7 @@ import com.info.sms.dto.PaginationDTO;
 import com.info.sms.dto.QuestionDTO;
 import com.info.sms.exception.CustomizeErrorCode;
 import com.info.sms.exception.CustomizeException;
+import com.info.sms.mapper.QuestionExtMapper;
 import com.info.sms.mapper.QuestionMapper;
 import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.Question;
@@ -28,6 +29,9 @@ public class QuestionService {
 
     @Autowired(required = false)
     private UserMapper userMapper;
+
+    @Autowired(required = false)
+    private QuestionExtMapper questionExtMapper;
 
 
     public PaginationDTO list(Integer page, Integer size) {
@@ -150,5 +154,21 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id) {
+        // 查询问卷数据
+//        Question question = questionMapper.selectByPrimaryKey(id);
+//        // 问卷原数据ViewCount + 1
+//        Question updateQuestion = new Question();
+//        updateQuestion.setViewCount(question.getViewCount() + 1);
+//        QuestionExample questionExample = new QuestionExample();
+//        questionExample.createCriteria().andIdEqualTo(id);
+//
+//        questionMapper.updateByExampleSelective(updateQuestion,questionExample);
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
     }
 }

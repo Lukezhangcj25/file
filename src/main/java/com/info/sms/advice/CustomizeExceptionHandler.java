@@ -18,7 +18,7 @@ public class CustomizeExceptionHandler {
         if(e instanceof CustomizeException){
             model.addAttribute("message",e.getMessage());
         }else{
-            model.addAttribute("message","数据不存在,前联系管理员!");
+            model.addAttribute("message","数据不存在,请联系管理员!");
         }
         return new ModelAndView("error");
     }
