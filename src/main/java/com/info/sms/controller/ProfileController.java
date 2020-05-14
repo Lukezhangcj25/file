@@ -4,7 +4,7 @@ import com.info.sms.dto.PaginationDTO;
 import com.info.sms.mapper.QuestionMapper;
 import com.info.sms.model.QuestionExample;
 import com.info.sms.model.User;
-import com.info.sms.servie.QuestionService;
+import com.info.sms.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

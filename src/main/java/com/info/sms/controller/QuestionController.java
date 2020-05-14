@@ -1,7 +1,7 @@
 package com.info.sms.controller;
 
 import com.info.sms.dto.QuestionDTO;
-import com.info.sms.servie.QuestionService;
+import com.info.sms.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

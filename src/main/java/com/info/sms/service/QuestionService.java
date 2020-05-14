@@ -1,4 +1,4 @@
-package com.info.sms.servie;
+package com.info.sms.service;
 
 import com.info.sms.dto.PaginationDTO;
 import com.info.sms.dto.QuestionDTO;

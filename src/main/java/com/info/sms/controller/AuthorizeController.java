@@ -4,7 +4,7 @@ import com.info.sms.dto.AccessTokenDTO;
 import com.info.sms.dto.GithubUser;
 import com.info.sms.model.User;
 import com.info.sms.provider.GithubProvider;
-import com.info.sms.servie.UserService;
+import com.info.sms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
