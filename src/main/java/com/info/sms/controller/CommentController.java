@@ -3,12 +3,10 @@ package com.info.sms.controller;
 import com.info.sms.dto.CommentDTO;
 import com.info.sms.dto.ResultDTO;
 import com.info.sms.exception.CustomizeErrorCode;
-import com.info.sms.exception.CustomizeException;
 import com.info.sms.mapper.CommentMapper;
 import com.info.sms.model.Comment;
 import com.info.sms.model.User;
 import com.info.sms.service.CommentService;
-import jdk.nashorn.internal.ir.RuntimeNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Luke 2020/5/13 16:31
@@ -26,10 +22,7 @@ import java.util.Map;
 @Controller
 public class CommentController {
 
-    @Autowired(required = false)
-    private CommentMapper commentMapper;
-
-    @Autowired(required = false)
+    @Autowired
     private CommentService commentService;
 
     @ResponseBody

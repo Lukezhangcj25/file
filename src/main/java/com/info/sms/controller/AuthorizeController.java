@@ -31,7 +31,7 @@ public class AuthorizeController {
     @Value("${server.Redirect.uri}")
     private String Redirecturi;
 
-    @Autowired(required = false)
+    @Autowired
     private UserService userService;
 
 

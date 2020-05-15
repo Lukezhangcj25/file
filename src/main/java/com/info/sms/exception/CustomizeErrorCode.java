@@ -8,6 +8,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     QUESTION_NOT_FOUND(2001,"问题不存在!"),
     TARGET_PARAM_NOT_FOUND(2002,"评论/问题不存在或已被删除,无法回复!"),
     SYS_ERROR(2003,"系统异常，请联系管理员！"),
+    TYPE_NOT_FOUND(2004,"评论类型不能为空！"),
+    TYPE_PARAM_WRONG(2004,"评论类型不存在！"),
     ;
 
     private Integer code;
