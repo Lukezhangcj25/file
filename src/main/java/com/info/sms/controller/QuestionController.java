@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class QuestionController {
 
-    @Autowired(required = false)
+    @Autowired
     private QuestionService questionService;
 
     @GetMapping("/question/{id}")
-    public String question(@PathVariable(name = "id") Integer id,
+    public String question(@PathVariable(name = "id") Long id,
                            Model model){
 
         // 增加阅读数

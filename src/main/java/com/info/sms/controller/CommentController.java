@@ -3,7 +3,6 @@ package com.info.sms.controller;
 import com.info.sms.dto.CommentDTO;
 import com.info.sms.dto.ResultDTO;
 import com.info.sms.exception.CustomizeErrorCode;
-import com.info.sms.mapper.CommentMapper;
 import com.info.sms.model.Comment;
 import com.info.sms.model.User;
 import com.info.sms.service.CommentService;

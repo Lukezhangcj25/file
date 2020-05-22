@@ -8,9 +8,9 @@ create table question
 	like_count int default 0,
 	tag VARCHAR(256),
 	gmt_create BIGINT,
-	creater int,
+	creator BIGINT not null,
 	gmt_modified BIGINT,
-	modifier int,
+	modifier BIGINT not null,
 	constraint question_pk
 		primary key (id)
 );

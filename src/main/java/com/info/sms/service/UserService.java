@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Service
 public class UserService {
-    @Autowired(required = false)
+    @Autowired
     private UserMapper userMapper;
 
     public void createOrUpdate(User user) {

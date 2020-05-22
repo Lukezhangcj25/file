@@ -24,13 +24,13 @@ import java.util.List;
 @Service
 public class QuestionService {
 
-    @Autowired(required = false)
+    @Autowired
     private QuestionMapper questionMapper;
 
-    @Autowired(required = false)
+    @Autowired
     private UserMapper userMapper;
 
-    @Autowired(required = false)
+    @Autowired
     private QuestionExtMapper questionExtMapper;
 
 
@@ -63,7 +63,7 @@ public class QuestionService {
 
 
         for(Question question:questions){
-            User user = userMapper.selectByPrimaryKey(question.getCreater());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);
             questionDTO.setUser(user);
@@ -73,12 +73,12 @@ public class QuestionService {
         return paginationDTO;
     }
 
-    public PaginationDTO list(int userId, Integer page, Integer size) {
+    public PaginationDTO list(Long userId, Integer page, Integer size) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
 
         QuestionExample questionExample = new QuestionExample();
-        questionExample.createCriteria().andCreaterEqualTo(userId);
+        questionExample.createCriteria().andCreatorEqualTo(userId);
         Integer totalCount = (int)questionMapper.countByExample(questionExample);
         // 如果总数据数  取余 每页显示数量为0，页数为数据总数除以每页数量的值
         // 如果总数据数  取余 每页显示数量不为0，页数为数据总数除以每页数量的值 + 1
@@ -102,13 +102,13 @@ public class QuestionService {
 
 
         QuestionExample example = new QuestionExample();
-        example.createCriteria().andCreaterEqualTo(userId);
+        example.createCriteria().andCreatorEqualTo(userId);
         List<Question> questions = questionMapper.selectByExampleWithRowbounds(new QuestionExample(),new RowBounds(offset,size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
 
         for(Question question:questions){
-            User user = userMapper.selectByPrimaryKey(question.getCreater());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);
             questionDTO.setUser(user);
@@ -118,14 +118,26 @@ public class QuestionService {
         return paginationDTO;
     }
 
-    public QuestionDTO getById(Integer id) {
+
+    public Integer countByUserId(Long userId) {
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria().andCreatorEqualTo(userId);
+        Integer totalCount = (int)questionMapper.countByExample(questionExample);
+
+        return totalCount;
+    }
+
+
+
+
+    public QuestionDTO getById(Long id) {
         Question question = questionMapper.selectByPrimaryKey(id);
         if(question == null){
             throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);
-        User user = userMapper.selectByPrimaryKey(question.getCreater());
+        User user = userMapper.selectByPrimaryKey(question.getCreator());
         questionDTO.setUser(user);
         return questionDTO;
     }
@@ -134,10 +146,13 @@ public class QuestionService {
         User user = new User();
         if(question.getId() == null){
             // 创建新问题
-            question.setCreater(user.getId());
+            question.setCreator(user.getId());
             question.setGmtCreate(System.currentTimeMillis());
             question.setModifier(user.getId());
             question.setGmtModified(question.getGmtCreate());
+            question.setViewCount(0);
+            question.setLikeCount(0);
+            question.setCommentCount(0);
             questionMapper.insert(question);
         }else{
             // 更新问题
@@ -156,7 +171,7 @@ public class QuestionService {
         }
     }
 
-    public void incView(Integer id) {
+    public void incView(Long id) {
         // 查询问卷数据
 //        Question question = questionMapper.selectByPrimaryKey(id);
 //        // 问卷原数据ViewCount + 1
