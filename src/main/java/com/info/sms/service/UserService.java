@@ -8,13 +8,14 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Luke 2020/4/27 16:00
  */
 @Service
 public class UserService {
-    @Autowired(required = false)
+    @Autowired
     private UserMapper userMapper;
 
     public void createOrUpdate(User user) {

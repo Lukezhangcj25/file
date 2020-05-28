@@ -52,10 +52,9 @@
                             <span aria-hidden="true">&lsaquo;</span>
                         </a>
                     </li>
-                    <li th:if="${pagination.showPage}" th:each="page:${pagination.pages}"
-                        th:class="${pagination.page == page}? 'active':''">
+                    <li th:each="page:${pagination.pages}" th:if="${pagination.pageType}" th:class="${pagination.page == page}? 'active':''">
                         <a class="active"
-                           th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}">
+                           th:href="@{/(page=${page})}" th:text="${page}">
 
                         </a>
                     </li>

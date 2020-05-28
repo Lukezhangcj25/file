@@ -16,6 +16,7 @@ public class PaginationDTO {
     private boolean showNext;
     private boolean showEndPage;
     private Integer page;
+    private boolean pageType;
     private List<Integer> pages = new ArrayList<>();
     private Integer totalPage;
     private boolean showPage;
@@ -38,6 +39,12 @@ public class PaginationDTO {
             }
         }
         this.page = page;
+
+        if(page > 0){
+            pageType = true;
+        }else{
+            pageType = false;
+        }
 
         if (page < 1) {
             showPrevions = false;

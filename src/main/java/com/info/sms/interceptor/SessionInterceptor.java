@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Service
 public class SessionInterceptor implements HandlerInterceptor {
-    @Autowired(required = false)
+    @Autowired
     private UserMapper userMapper;
 
     @Override

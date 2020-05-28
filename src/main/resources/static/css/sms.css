@@ -9,7 +9,12 @@ body{
 
 .btn-publish{
     float:right;
-    margin-bottom: 15px;
+    margin-bottom: 3%;
+}
+
+.btn-publish{
+    float:right;
+    margin-bottom: 3%;
 }
 
 .media-object{
@@ -36,3 +41,25 @@ body{
     margin-left: 35%;
     margin-top: 8%;
 }
+
+
+.qvtop{
+    margin-top: 5%;
+}
+
+.qvbottom{
+    margin-bottom: 5%;
+}
+
+.qv{
+    margin: 10px 0 5% 0;
+}
+
+.usertop{
+    margin-top: 6%;
+}
+
+.media-body{
+    padding-top: 1%;
+}
+
