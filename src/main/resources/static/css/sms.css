@@ -44,11 +44,15 @@ body{
 
 
 .qvtop{
-    margin-top: 5%;
+    margin-top: 10px;
 }
 
 .qvbottom{
     margin-bottom: 5%;
+}
+
+.buttom-top{
+    margin-top: 5%;
 }
 
 .qv{
@@ -60,6 +64,37 @@ body{
 }
 
 .media-body{
-    padding-top: 1%;
+    padding-top: 2px;
 }
 
+.comment-sp-t{
+    margin-top: 0px;
+}
+
+.comment-sp-b{
+    margin-bottom: 5px;
+}
+
+.menu{
+    color: #999;
+}
+
+.menu .icon{
+    margin-top: 5px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.menu .icon:hover{
+    color: #499ef3;
+}
+
+.menu .font{
+    margin-top: 5px;
+    margin-right: 1px;
+    cursor: pointer;
+}
+
+.menu .font:hover{
+    color: #499ef3;
+}

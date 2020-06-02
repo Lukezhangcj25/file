@@ -11,6 +11,7 @@
 [Lombok]:https://projectlombok.org/
 [thymeleaf]:https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-theach
 [Spring MVC]:https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html#mvc-handlermapping-interceptor
+[LocalStroage]:
 
 ##命令
 [flyway]:mvn flyway:migrate

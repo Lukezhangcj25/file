@@ -1,6 +1,6 @@
 package com.info.sms.controller;
 
-import com.info.sms.dto.CommentDTO;
+import com.info.sms.dto.CommentCreateDTO;
 import com.info.sms.dto.ResultDTO;
 import com.info.sms.exception.CustomizeErrorCode;
 import com.info.sms.model.Comment;
@@ -26,7 +26,7 @@ public class CommentController {
 
     @ResponseBody
     @RequestMapping(value = "/comment",method = RequestMethod.POST)
-    public Object post(@RequestBody CommentDTO commentDTO,
+    public Object post(@RequestBody CommentCreateDTO commentCreateDTO,
                        HttpServletRequest request) {
 
         User user = (User)request.getSession().getAttribute("user");
@@ -37,9 +37,9 @@ public class CommentController {
 
 
         Comment comment = new Comment();
-        comment.setParantId(commentDTO.getParentId());
-        comment.setContent(commentDTO.getContent());
-        comment.setType(commentDTO.getType());
+        comment.setParantId(commentCreateDTO.getParentId());
+        comment.setContent(commentCreateDTO.getContent());
+        comment.setType(commentCreateDTO.getType());
         comment.setCreator(user.getId());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(System.currentTimeMillis());
