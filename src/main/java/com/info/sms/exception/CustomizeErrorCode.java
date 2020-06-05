@@ -10,7 +10,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     SYS_ERROR(2003,"系统异常，请联系管理员！"),
     TYPE_NOT_FOUND(2004,"评论类型不能为空！"),
     TYPE_PARAM_WRONG(2004,"评论类型不存在！"),
-    COMMENT_NOT_FOUND(2005,"您操作的评论不存在!")
+    COMMENT_NOT_FOUND(2005,"您操作的评论不存在!"),
+    COMMENT_IS_EMPTY(2006,"回复内容不能为空!")
     ;
 
     private Integer code;

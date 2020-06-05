@@ -1,6 +1,15 @@
+/**
+*提交回复
+*/
 function post() {
     var questionId = $("#question_id").val();
     var commentContent = $("#comment_content").val();
+
+    if(!commentContent){
+        alert("回复不能为空!");
+        return;
+    }
+
     $.ajax(
         {
             type: "POST",
@@ -14,6 +23,7 @@ function post() {
             success: function (response) {
                 if (response.code == 200) {
                     $("#comment_section").hide();
+                    window.location.reload();
                 } else {
                     if (response.code == 2000) {
                         var isAccepted = confirm(response.message);
@@ -28,4 +38,26 @@ function post() {
             },
             dataType: "json"
         });
+}
+
+
+/**
+ * 展开二级评论
+ */
+function collapseComments(e) {
+        var id = e.getAttribute("data-id");
+        var comments = $("#comment-" + id);
+        debugger;
+        if(comments.is('.on')){
+            comments.removeClass("on");
+            comments.addClass("in");
+            $(".comment").css("margin-bottom","5px");
+        }else if(comments.is('.in')){
+            comments.removeClass("in");
+            comments.addClass("on");
+            $(".comment").css("margin-bottom","15px");
+        }else{
+            comments.addClass("in");
+            $(".comment").css("margin-bottom","5px");
+        }
 }

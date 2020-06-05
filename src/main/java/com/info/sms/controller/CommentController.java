@@ -6,6 +6,7 @@ import com.info.sms.exception.CustomizeErrorCode;
 import com.info.sms.model.Comment;
 import com.info.sms.model.User;
 import com.info.sms.service.CommentService;
+import org.h2.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,10 +32,13 @@ public class CommentController {
 
         User user = (User)request.getSession().getAttribute("user");
         if(user == null){
-
             return ResultDTO.errorOf(CustomizeErrorCode.NOT_LOGIN);
         }
 
+//        if(commentCreateDTO == null || commentCreateDTO.getContent() == null || commentCreateDTO.getContent() == ""){
+        if(commentCreateDTO == null || StringUtils.isNullOrEmpty(commentCreateDTO.getContent())){
+        return ResultDTO.errorOf(CustomizeErrorCode.COMMENT_IS_EMPTY);
+        }
 
         Comment comment = new Comment();
         comment.setParantId(commentCreateDTO.getParentId());

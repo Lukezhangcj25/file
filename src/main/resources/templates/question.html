@@ -35,12 +35,12 @@
                 </a>
             </div>
             <!-- 回复 -->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" th:if="${question.commentCount > 0}">
                 <h3>
                     <span th:text="${question.commentCount}"></span>个回复
                 </h3>
             </div>
-            <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-t">
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-t" th:if="${question.commentCount > 0}">
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" th:each="comment:${comments}">
                 <div class="media-left">
                     <a href="#">
@@ -57,22 +57,26 @@
                         <span class="icon" th:text="0"></span>
                         <span class="glyphicon glyphicon-thumbs-down font"></span>
                         <span class="icon" th:text="0"></span>
-                        <span class="glyphicon glyphicon-comment icon"></span>
+                        <span class="glyphicon glyphicon-comment icon" th:data-id="${comment.id}"
+                              onclick="collapseComments(this)"></span>
                         <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}"></span>
                     </div>
+                    <div class="comment"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comments collapse on"
+                         th:id="${'comment-'+comment.id}">
+                        123
+                    </div>
                 </div>
-
-
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
             <!-- 回复输入框 -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" id="comment_section">
-                <div class="media-left">
+                <div class="media-left" th:if="${session.user != null}">
                     <a href="#">
                         <img class="media-object img-rounded" th:src="${session.user.getAvatarUrl()}">
                     </a>
                 </div>
-                <div class="media-body">
+                <div class="media-body" th:if="${session.user != null}">
                     <h6 class="media-heading">
                         <span th:text="${session.user.getName()}"></span>
                     </h6>
