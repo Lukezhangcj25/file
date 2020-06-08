@@ -47,17 +47,28 @@ function post() {
 function collapseComments(e) {
         var id = e.getAttribute("data-id");
         var comments = $("#comment-" + id);
+        var comment = $("#bt-" + id);
+        console.log(comment);
+
         debugger;
-        if(comments.is('.on')){
-            comments.removeClass("on");
-            comments.addClass("in");
-            $(".comment").css("margin-bottom","5px");
-        }else if(comments.is('.in')){
-            comments.removeClass("in");
-            comments.addClass("on");
-            $(".comment").css("margin-bottom","15px");
+        if(comments.is('.collapse.on')){
+            // 收起评论
+            comments.removeClass("collapse on");
+            comments.addClass("collapse in");
+            comment.css("margin-bottom","5px");
+            e.classList.add("active");
+
+        }else if(comments.is('.collapse.in')){
+            // 展开评论
+            comments.removeClass("collapse in");
+            comments.addClass("collapse on");
+            comment.removeAttr("style");
+            e.classList.remove("active");
         }else{
-            comments.addClass("in");
-            $(".comment").css("margin-bottom","5px");
+            // 如页面不存在in或on时，实现展开功能
+            comments.addClass("collapse in");
+            comment.css("margin-bottom","5px");
         }
+
+
 }

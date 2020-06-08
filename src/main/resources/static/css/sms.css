@@ -85,6 +85,10 @@ body{
     cursor: pointer;
 }
 
+.menu .active{
+    color: #499ef3;
+}
+
 .menu .icon:hover{
     color: #499ef3;
 }
@@ -105,6 +109,7 @@ body{
     border-bottom:0.5px solid #eeeeee;
 }
 
+
 .comments{
     margin-top:5px;
     margin-bottom:15px;
@@ -115,4 +120,12 @@ body{
 
 hr{
     box-sizing:border-box;
+}
+
+.hand{
+    // 变手形
+    oElement.style.cursor = "pointer";
+
+    /*// 恢复原样*/
+    /*oElement.style.cursor = "default";*/
 }
