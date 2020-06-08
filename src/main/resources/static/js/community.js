@@ -48,16 +48,17 @@ function collapseComments(e) {
         var id = e.getAttribute("data-id");
         var comments = $("#comment-" + id);
         var comment = $("#bt-" + id);
+        var i = 0;
+
         console.log(comment);
 
         debugger;
-        if(comments.is('.collapse.on')){
+        if(comments.is('.collapse.on')) {
             // 收起评论
             comments.removeClass("collapse on");
             comments.addClass("collapse in");
-            comment.css("margin-bottom","5px");
+            comment.css("margin-bottom", "5px");
             e.classList.add("active");
-
         }else if(comments.is('.collapse.in')){
             // 展开评论
             comments.removeClass("collapse in");
@@ -69,6 +70,8 @@ function collapseComments(e) {
             comments.addClass("collapse in");
             comment.css("margin-bottom","5px");
         }
+
+
 
 
 }
