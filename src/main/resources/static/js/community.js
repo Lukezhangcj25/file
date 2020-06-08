@@ -50,9 +50,6 @@ function collapseComments(e) {
         var comment = $("#bt-" + id);
         var i = 0;
 
-        console.log(comment);
-
-        debugger;
         if(comments.is('.collapse.on')) {
             // 收起评论
             comments.removeClass("collapse on");
