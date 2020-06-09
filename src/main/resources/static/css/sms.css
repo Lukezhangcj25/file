@@ -110,12 +110,16 @@ body{
 }
 
 
+.comment-one-top{
+
+}
+
 .comments{
     margin-top:5px;
     margin-bottom:15px;
-    border-bottom:1px solid #eeeeee;
-    border-left:1px solid #eeeeee;
-    border-radius: 0 0 0 5px;
+    border:1px solid #e0e0e0;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0px 0px 0px 0px;
 }
 
 hr{
@@ -129,3 +133,27 @@ hr{
     /*// 恢复原样*/
     /*oElement.style.cursor = "default";*/
 }
+
+.comments .comment-one-top:last-child .comment{
+    display: none;
+}
+
+.comments .comment-one-top:last-child{
+    margin-bottom: 15px;
+}
+
+.comments .comment-one-top:first-child{
+    margin-top: 15px;
+}
+
+.comments .comment-one-top{
+    margin-left: 0px;
+
+}
+
+
+
+
+
+
+
