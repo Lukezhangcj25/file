@@ -134,22 +134,29 @@ hr{
     /*oElement.style.cursor = "default";*/
 }
 
-.comments .comment-one-top:last-child .comment{
+.comments .comment-two-top:last-child .comment{
     display: none;
 }
 
-.comments .comment-one-top:last-child{
-    margin-bottom: 15px;
+.comments .comment-two-bottom{
+    margin-top: 30px;
+    margin-left: 45px;
+    margin-bottom: 30px;
 }
 
-.comments .comment-one-top:first-child{
+.comments .comment-two-top:last-child .comment{
+    margin-bottom: 0px;
+}
+
+.comments .comment-two-top:first-child{
     margin-top: 15px;
 }
 
-.comments .comment-one-top{
+.comments .comment-two-top{
     margin-left: 0px;
 
 }
+
 
 
 

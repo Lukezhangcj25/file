@@ -9,6 +9,7 @@
     <script src="/js/jquery-3.5.0.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/community.js" type="application/javascript"></script>
+    <script src="/js/moment.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -47,7 +48,7 @@
                         <img class="media-object img-rounded" th:src="${comment.user.avatarUrl}">
                     </a>
                 </div>
-                <div class="media-body">
+                <div class="media-body" th:id="${'comment-body-'+comment.id}">
                     <h6 class="media-heading">
                         <span th:text="${comment.user.name}"></span>
                     </h6>
@@ -57,27 +58,26 @@
                         <span class="icon" th:text="0"></span>
                         <span class="glyphicon glyphicon-thumbs-down font"></span>
                         <span class="icon" th:text="0"></span>
-                        <span class="glyphicon glyphicon-comment icon" th:data-id="${comment.id}"
+                        <span class="glyphicon glyphicon-comment font" th:data-id="${comment.id}"
                               onclick="collapseComments(this)"></span>
+                        <span class="icon" th:text="${comment.commentCount}"></span>
                         <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}"></span>
                     </div>
                     <div class="comment" th:id="${'commenthr-'+comment.id}"></div>
+                    <!-- 二级回复 -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comments collapse on"
                          th:id="${'comment-'+comment.id}">
-                        <!-- 二级回复 -->
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-one-top"
-                             th:each="comment:${comments}">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object img-rounded" th:src="${comment.user.avatarUrl}">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h6 class="media-heading">
-                                    <span th:text="${comment.user.name}"></span>
-                                </h6>
-                                <div th:text="${comment.content}"></div>
-                                <div class="comment"></div>
+
+
+
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-sx-10 comment-two-bottom">
+                            <div class="input-group ">
+                                <input type="text" class="form-control" placeholder="回复评论"
+                                       th:id="${'input-'+comment.id}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success" type="button" onclick="comment(this)"
+                                            th:data-id="${comment.id}">评论</button>
+                                </span>
                             </div>
                         </div>
                     </div>

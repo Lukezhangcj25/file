@@ -1,13 +1,11 @@
 package com.info.sms.controller;
 
-import com.info.sms.dto.CommentCreateDTO;
 import com.info.sms.dto.CommentDTO;
 import com.info.sms.dto.QuestionDTO;
-import com.info.sms.model.User;
+import com.info.sms.enums.CommentTypeEnum;
 import com.info.sms.service.CommentService;
 import com.info.sms.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +41,7 @@ public class QuestionController {
         QuestionDTO questionDTO = questionService.getById(id);
 
 
-        List<CommentDTO> comments = commentService.listByQuestionId(id);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
 
         model.addAttribute("question",questionDTO);
         model.addAttribute("comments",comments);
