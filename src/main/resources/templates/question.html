@@ -26,7 +26,20 @@
             </span>
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+
+            <!-- 内容 -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" th:text="${question.description}"></div>
+
+            <!-- 标签 -->
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-b">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-tag">
+                <span class="label label-info tag" th:each="tag : ${question.tag.split(',')}">
+                    <span class="glyphicon glyphicon-tags"></span>
+                    <span class="label label-info" th:text="${tag}"></span>
+                </span>
+            </div>
+
+            <!-- 编辑 -->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-b">
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 qvbottom">
                 <a th:href="@{'/publish/'+${question.id}}" class="community-menu"

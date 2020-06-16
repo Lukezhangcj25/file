@@ -4,10 +4,7 @@ import com.info.sms.dto.CommentDTO;
 import com.info.sms.enums.CommentTypeEnum;
 import com.info.sms.exception.CustomizeErrorCode;
 import com.info.sms.exception.CustomizeException;
-import com.info.sms.mapper.CommentMapper;
-import com.info.sms.mapper.QuestionExtMapper;
-import com.info.sms.mapper.QuestionMapper;
-import com.info.sms.mapper.UserMapper;
+import com.info.sms.mapper.*;
 import com.info.sms.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +25,9 @@ public class CommentService {
 
     @Autowired
     private CommentMapper commentMapper;
+
+    @Autowired
+    private CommentExtMapper commentExtMapper;
 
     @Autowired
     private QuestionMapper questionMapper;
@@ -56,6 +56,12 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             } else {
                 commentMapper.insert(comment);
+
+                // 增加评论数
+                Comment parentComment = new Comment();
+                parentComment.setId(comment.getParantId());
+                parentComment.setCommentCount(1);
+                commentExtMapper.incComment(parentComment);
             }
         } else {
             // 回复问题

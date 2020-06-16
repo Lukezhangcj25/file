@@ -48,6 +48,7 @@ body{
 }
 
 .qvbottom{
+    margin-top: 5px;
     margin-bottom: 5%;
 }
 
@@ -73,6 +74,10 @@ body{
 
 .comment-sp-b{
     margin-bottom: 5px;
+}
+
+.comment-tag{
+    margin-top: 16px;
 }
 
 .menu{
@@ -157,6 +162,11 @@ hr{
 
 }
 
+.tag{
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
 
 
