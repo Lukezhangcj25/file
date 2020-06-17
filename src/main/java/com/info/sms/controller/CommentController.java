@@ -2,7 +2,6 @@ package com.info.sms.controller;
 
 import com.info.sms.dto.CommentCreateDTO;
 import com.info.sms.dto.CommentDTO;
-import com.info.sms.dto.QuestionDTO;
 import com.info.sms.dto.ResultDTO;
 import com.info.sms.enums.CommentTypeEnum;
 import com.info.sms.exception.CustomizeErrorCode;

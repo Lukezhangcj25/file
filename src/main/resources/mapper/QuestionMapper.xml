@@ -16,7 +16,7 @@
     <result column="GMT_CREATE" jdbcType="BIGINT" property="gmtCreate" />
     <result column="CREATOR" jdbcType="BIGINT" property="creator" />
     <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified" />
-    <result column="MODIFIER" jdbcType="BIGINT" property="modifier" />
+    <result column="MODIdFIER" jdbcType="BIGINT" property="modifier" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.info.sms.model.Question">
     <!--
