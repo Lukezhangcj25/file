@@ -169,6 +169,15 @@ hr{
 }
 
 
+.ulxg{
+list-style: none;
+padding-left: 0px;
+color: #151faa;
+}
+
+.lixg:hover{
+    text-decoration: none;
+}
 
 
 
