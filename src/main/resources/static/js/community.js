@@ -134,3 +134,39 @@ function collapseComments(e) {
         });
     }
 }
+
+function showSelectTag(e) {
+    var display = $("#select-tag");
+
+    if(display.is('.display')){
+        display.removeClass("display");
+    }else{
+        display.addClass("display");
+
+    }
+}
+
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
+    var previous = $("#tag").val();
+    if(previous.indexOf(value) == -1){
+        if(previous){
+            $("#tag").val(previous + ',' + value);
+        }else{
+            $("#tag").val(value);
+        }
+    }
+}
+
+
+function firstActive() {
+
+    var publishCategory = $(".display-css ul.nav-tabs li:first-child");
+    var publishTag = $(".tab-content div.publish-display-tab:first-child");
+
+    if(!publishCategory.is('.active')||!publishTag.is('.active')){
+        publishCategory.addClass("active");
+        publishTag.addClass("active");
+    }
+}
+

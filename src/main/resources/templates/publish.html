@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="/css/sms.css"/>
     <script src="/js/jquery-3.5.0.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/community.js" type="application/javascript"></script>
+    <script src="/js/moment.js" type="application/javascript"></script>
 </head>
-<body>
+<body onload="firstActive()">
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-sx-12">
-            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true" style="margin-right: 5px;transform: translateY(3px)"></span>
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"
+                      style="margin-right: 5px;transform: translateY(3px)"></span>
                 发布
             </h2>
             <hr>
@@ -22,23 +25,46 @@
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">问题标题(简单扼要)：</label>
-                    <input type="text" class="form-control" th:value="${title}" id="title" name="title" placeholder="请输入标题......">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           autocomplete="off"
+                           placeholder="请输入标题......">
                 </div>
                 <div class="form-group">
                     <label for="description">问题补充(必须，请参照右侧提示)：</label>
-                    <textarea class="form-control" th:text="${description}" name="description" id="description" cols="30"
+                    <textarea class="form-control" th:text="${description}" name="description" id="description"
+                              cols="30"
                               rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="tag">添加标签：</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="请输入标签，以，隔开">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                           autocomplete="off"
+                           placeholder="请输入标签，以，隔开"
+                           onclick="showSelectTag()">
+                    <div id="select-tag" class="display display-css">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" th:each="selectCategory: ${tags}" th:class="${selectCategoryStat.first ? 'active':''}">
+                                <a th:href="${'#'+selectCategory.id}" th:aria-controls="${selectCategory.id}" role="tab"
+                                   data-toggle="tab" th:text="${selectCategory.categoryName}"></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane publish-display-tab publish-span-tag" th:id="${selectCategory.id}" th:each="selectCategory: ${tags}"
+                                 th:classappend="${selectCategoryStat.first ? 'active':''}">
+                                <span class="label label-info tag" th:each="selectTag: ${selectCategory.tags}">
+                                    <span class="glyphicon glyphicon-tags" onclick="selectTag(this)" th:data-tag="${selectTag}"></span>
+                                    <span class="label label-info" onclick="selectTag(this)" th:data-tag="${selectTag}" th:text="${selectTag}"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="container-fluid main">
                     <div class="row">
                         <div class="text-danger col-lg-9 col-md-12 col-sm-12 col-xs-12"
                              th:text="${error}" th:if="${error != null}">
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <button type="submit" class="btn btn-success btn-publish">
                                 确认发送
                             </button>

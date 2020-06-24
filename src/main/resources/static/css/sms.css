@@ -180,6 +180,34 @@ color: #151faa;
 }
 
 
+.imgmaxsize{
+    max-height:50px;
+    max-width:50px;
+}
 
+.display{
+    margin-top: 5px;
+    display: none;
+}
+
+.display-css{
+    margin-top: 5px;
+}
+
+
+.publish-display-tab{
+    border-right: 1px solid #e0e0e0;
+    min-height: 45px;
+    border-left: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+}
+
+.publish-span-tag{
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 30px;
+}
 
 
