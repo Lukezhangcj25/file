@@ -210,4 +210,44 @@ color: #151faa;
     line-height: 30px;
 }
 
+.profile-modify{
+    font-size: 12px;
+}
 
+.navigation-superscript-two{
+    font-size: 12px;
+    position: absolute;
+    left: 22px;
+    top: 6px;
+    border-radius: 80%;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background: #f20c55;
+    text-align: center;
+}
+
+.navigation-superscript-three{
+    font-size: 12px;
+    position: absolute;
+    left: 22px;
+    top: 6px;
+    border-radius: 80%;
+    height: 20px;
+    width: 22px;
+    display: inline-block;
+    background: #f20c55;
+    text-align: center;
+}
+
+.navigation-superscript-font{
+    color: #FFFFFF;
+}
+
+.navigation-bell{
+    font-size: 18px;
+}
+
+.navigation-padding>li>a{
+    padding: 10px 10px 0px 10px;
+}

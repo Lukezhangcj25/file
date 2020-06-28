@@ -24,6 +24,14 @@
                     <li th:if="${session.user != null}">
                         <a href="/publish">提问</a>
                     </li>
+                    <li>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="消息提示" class="navigation-padding">
+                        <span class="glyphicon glyphicon-bell navigation-bell" aria-hidden="true"></span>
+                        <span class="navigation-superscript-two">
+                        <span class="navigation-superscript-font">12</span>
+                        </span>
+                        </a>
+                    </li>
                     <li class="dropdown" th:if="${session.user != null}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">
