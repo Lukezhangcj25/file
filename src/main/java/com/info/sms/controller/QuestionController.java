@@ -3,7 +3,9 @@ package com.info.sms.controller;
 import com.info.sms.dto.CommentDTO;
 import com.info.sms.dto.QuestionDTO;
 import com.info.sms.enums.CommentTypeEnum;
+import com.info.sms.model.User;
 import com.info.sms.service.CommentService;
+import com.info.sms.service.NotificationService;
 import com.info.sms.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +29,8 @@ public class QuestionController {
     @Autowired
     private CommentService commentService;
 
-
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id") Long id,
@@ -46,6 +49,10 @@ public class QuestionController {
         model.addAttribute("question",questionDTO);
         model.addAttribute("comments",comments);
         model.addAttribute("relatedQuestions",relatedQuestions);
+
+        User user = (User)request.getSession().getAttribute("user");
+        Long unreadCount = notificationService.unreadCount(user.getId());
+        model.addAttribute("unreadCount",unreadCount);
 
         return "question";
     }

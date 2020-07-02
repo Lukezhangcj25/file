@@ -2,6 +2,7 @@ package com.info.sms.controller;
 
 import com.info.sms.dto.PaginationDTO;
 import com.info.sms.model.User;
+import com.info.sms.service.NotificationService;
 import com.info.sms.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ import javax.servlet.http.HttpServletRequest;
 public class ProfileController {
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/profile/{action}")
     public String profile(HttpServletRequest request,
@@ -39,18 +43,26 @@ public class ProfileController {
         }else if ("questions".equals(action)) {
             model.addAttribute("section", "questions");
             model.addAttribute("sectionName", "我的问题");
+
+            PaginationDTO pagination = questionService.list(user.getId(),page,size);
+            model.addAttribute("pagination",pagination);
+
         } else if ("replies".equals(action)) {
+            PaginationDTO paginationDTO = notificationService.list(user.getId(),page,size);
+
             model.addAttribute("section", "replies");
+            model.addAttribute("pagination",paginationDTO);
             model.addAttribute("sectionName", "最新回复");
+
         }
 
 
-        PaginationDTO pagination = questionService.list(user.getId(),page,size);
-        model.addAttribute("pagination",pagination);
-
-//      Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+        // Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
         Integer totalCount = questionService.countByUserId(user.getId());
         model.addAttribute("totalCount",totalCount);
+
+        Long unreadCount = notificationService.unreadCount(user.getId());
+        model.addAttribute("unreadCount",unreadCount);
 
         return "profile";
     }

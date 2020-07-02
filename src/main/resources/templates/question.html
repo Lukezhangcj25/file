@@ -53,6 +53,7 @@
                 <h3>
                     <span th:text="${question.commentCount}"></span>个回复
                 </h3>
+                </h3>
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-t" th:if="${question.commentCount > 0}">
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" th:each="comment:${comments}">

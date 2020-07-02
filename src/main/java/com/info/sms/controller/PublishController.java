@@ -4,6 +4,7 @@ import com.info.sms.cache.TagCache;
 import com.info.sms.dto.QuestionDTO;
 import com.info.sms.model.Question;
 import com.info.sms.model.User;
+import com.info.sms.service.NotificationService;
 import com.info.sms.service.QuestionService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,12 @@ public class PublishController {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private NotificationService notificationService;
+
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name="id") Long id,
+                       HttpServletRequest request,
                        Model model){
         QuestionDTO question = questionService.getById(id);
         model.addAttribute("title",question.getTitle());
@@ -35,6 +40,10 @@ public class PublishController {
         model.addAttribute("id",question.getId());
 
         model.addAttribute("tags", TagCache.get());
+
+        User user = (User)request.getSession().getAttribute("user");
+        Long unreadCount = notificationService.unreadCount(user.getId());
+        model.addAttribute("unreadCount",unreadCount);
 
         return "publish";
     }
@@ -92,6 +101,7 @@ public class PublishController {
         question.setId(id);
 
         questionService.createOrUpdate(question,user);
+
 
         return "redirect:/";
 
