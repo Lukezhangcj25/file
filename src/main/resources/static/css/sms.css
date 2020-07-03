@@ -248,3 +248,17 @@ color: #151faa;
     font-size: 18px;
 }
 
+.replies-comment{
+    margin-top:10px;
+    margin-bottom:5px;
+    border-bottom:0.5px solid #eeeeee;
+}
+
+.profile-color-read{
+    color: #6666;
+}
+
+.profile-color-notread{
+    color: #00b3ee;
+}
+
