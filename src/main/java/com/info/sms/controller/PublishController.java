@@ -41,9 +41,6 @@ public class PublishController {
 
         model.addAttribute("tags", TagCache.get());
 
-        User user = (User)request.getSession().getAttribute("user");
-        Long unreadCount = notificationService.unreadCount(user.getId());
-        model.addAttribute("unreadCount",unreadCount);
 
         return "publish";
     }

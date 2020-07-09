@@ -27,8 +27,8 @@
                     <li th:if="${session.user != null}">
                         <a href="/profile/replies" data-toggle="tooltip" data-placement="top" title="消息提示">
                             <span class="glyphicon glyphicon-bell navigation-bell" aria-hidden="true"></span>
-                        <span class="navigation-superscript-two">
-                            <span class="navigation-superscript-font" th:text="${unreadCount}"></span>
+                        <span class="navigation-superscript-two" th:if="${session.unreadCount > 0}">
+                            <span class="navigation-superscript-font" th:text="${session.unreadCount}"></span>
                         </span>
                         </a>
                     </li>

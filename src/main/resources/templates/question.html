@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="/css/sms.css"/>
+    <link rel="stylesheet" href="/css/editormd.preview.min.css"/>
     <script src="/js/jquery-3.5.0.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/community.js" type="application/javascript"></script>
     <script src="/js/moment.js" type="application/javascript"></script>
+    <script src="/js/editormd.min.js" type="application/javascript"></script>
+    <script src="/js/lib/marked.min.js"></script>
+    <script src="/js/lib/prettify.min.js"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -28,13 +32,20 @@
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
 
             <!-- 内容 -->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" th:text="${question.description}"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" id="question-view">
+                <textarea class="publish-display" th:text="${question.description}"></textarea>
+            </div>
+            <script type="application/javascript">
+                $(function () {
+                    editormd.markdownToHTML("question-view",{})
+                });
+            </script>
 
             <!-- 标签 -->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-sp-b">
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 comment-tag">
                 <span class="label label-info tag" th:each="tag : ${question.tag.split(',')}">
-                    <span class="glyphicon glyphicon-tags"></span>
+                    <span class="glyphicon glyphicon-tags publish-tag"></span>
                     <span class="label label-info" th:text="${tag}"></span>
                 </span>
             </div>
@@ -134,7 +145,7 @@
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
                 <h4>微信关注</h4>
-                <img class="imgmaxsize" src="/img/imge.png">
+                <img class="imgmaxsize" src="/images/imge.png">
             </div>
             <!-- 相关问题 -->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-sx-12">

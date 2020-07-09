@@ -61,8 +61,7 @@ public class ProfileController {
         Integer totalCount = questionService.countByUserId(user.getId());
         model.addAttribute("totalCount",totalCount);
 
-        Long unreadCount = notificationService.unreadCount(user.getId());
-        model.addAttribute("unreadCount",unreadCount);
+
 
         return "profile";
     }

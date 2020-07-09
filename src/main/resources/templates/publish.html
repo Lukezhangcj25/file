@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="/css/sms.css"/>
+    <link rel="stylesheet" href="/css/editormd.min.css"/>
     <script src="/js/jquery-3.5.0.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/community.js" type="application/javascript"></script>
     <script src="/js/moment.js" type="application/javascript"></script>
+    <script src="/js/editormd.min.js" type="application/javascript"></script>
 </head>
 <body onload="firstActive()">
 <div th:insert="~{navigation :: nav}"></div>
@@ -29,12 +31,28 @@
                            autocomplete="off"
                            placeholder="请输入标题......">
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="question-editor">
                     <label for="description">问题补充(必须，请参照右侧提示)：</label>
-                    <textarea class="form-control" th:text="${description}" name="description" id="description"
+                    <textarea name="description" id="description" th:text="${description}"
+                              class="form-control publish-display"
                               cols="30"
                               rows="10"></textarea>
                 </div>
+                <script type="text/javascript">
+                    $(function () {
+                        var editor = editormd("question-editor",{
+                            width:"100%",
+                            height:350,
+                            path:"/js/lib/",
+                            delay:0,
+                            watch:false,
+                            placeholder:"请输入问题问题!",
+                            imageUpload: true,
+                            imageFormats: ["jpg","jpeg","gif","png","bmp","webp"],
+                            imageUploadURL: "/file/upload"
+                        });
+                    });
+                </script>
                 <div class="form-group">
                     <label for="tag">添加标签：</label>
                     <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
@@ -48,11 +66,11 @@
                                    data-toggle="tab" th:text="${selectCategory.categoryName}"></a>
                             </li>
                         </ul>
-                        <div class="tab-content">
+                        <div class="tab-content publish-cursor">
                             <div role="tabpanel" class="tab-pane publish-display-tab publish-span-tag" th:id="${selectCategory.id}" th:each="selectCategory: ${tags}"
                                  th:classappend="${selectCategoryStat.first ? 'active':''}">
                                 <span class="label label-info tag" th:each="selectTag: ${selectCategory.tags}">
-                                    <span class="glyphicon glyphicon-tags" onclick="selectTag(this)" th:data-tag="${selectTag}"></span>
+                                    <span class="glyphicon glyphicon-tags publish-tag" onclick="selectTag(this)" th:data-tag="${selectTag}"></span>
                                     <span class="label label-info" onclick="selectTag(this)" th:data-tag="${selectTag}" th:text="${selectTag}"></span>
                                 </span>
                             </div>

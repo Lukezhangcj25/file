@@ -262,3 +262,14 @@ color: #151faa;
     color: #00b3ee;
 }
 
+.publish-display{
+    display: none;
+}
+
+.publish-tag{
+    color: white;
+}
+
+.publish-cursor{
+    cursor: pointer;
+}

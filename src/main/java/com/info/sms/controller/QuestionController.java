@@ -50,9 +50,6 @@ public class QuestionController {
         model.addAttribute("comments",comments);
         model.addAttribute("relatedQuestions",relatedQuestions);
 
-        User user = (User)request.getSession().getAttribute("user");
-        Long unreadCount = notificationService.unreadCount(user.getId());
-        model.addAttribute("unreadCount",unreadCount);
 
 
         return "question";

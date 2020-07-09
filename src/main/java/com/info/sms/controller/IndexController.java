@@ -34,9 +34,6 @@ public class IndexController {
         PaginationDTO pagination = questionService.list(page,size);
         model.addAttribute("pagination", pagination);
 
-        User user = (User)request.getSession().getAttribute("user");
-        Long unreadCount = notificationService.unreadCount(user.getId());
-        model.addAttribute("unreadCount",unreadCount);
 
         return "index";
     }
