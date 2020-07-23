@@ -1,0 +1,504 @@
+2020-08-29 18:10:00.847  WARN 4484 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38d7m44s121ms307µs562ns).
+2020-08-29 18:10:44.914  WARN 4484 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s504ms785µs460ns).
+2020-07-23 15:41:35.741  INFO 12948 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 12948 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 15:41:35.751  INFO 12948 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 15:41:36.206  INFO 12948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 15:41:36.206  INFO 12948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 15:41:55.340  INFO 12948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 15:41:55.479  INFO 12948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 15:41:55.482  INFO 12948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 15:41:55.560  INFO 12948 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 15:41:55.565  INFO 12948 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 15:41:55.567  INFO 12948 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 15:41:56.730  INFO 12948 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 15:42:00.696  INFO 12948 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 15:42:00.697  INFO 12948 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 24490 ms
+2020-07-23 15:42:01.274  INFO 12948 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 15:42:01.279  WARN 12948 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-07-23 15:42:05.617  INFO 12948 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 15:42:05.626  INFO 12948 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 15:42:11.473  INFO 12948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 15:42:12.611  INFO 12948 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 15:42:15.834  INFO 12948 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 15:42:16.304  INFO 12948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 15:42:16.316  INFO 12948 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 45.687 seconds (JVM running for 51.082)
+2020-07-23 15:43:58.249  INFO 12948 --- [http-nio-9002-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 15:43:58.251  INFO 12948 --- [http-nio-9002-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 15:43:58.283  INFO 12948 --- [http-nio-9002-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-07-23 15:43:59.497  WARN 12948 --- [http-nio-9002-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'sms.question' doesn't exist
+### The error may exist in file [G:\Project\codedrinker\sms\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.info.sms.mapper.QuestionExtMapper.countBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select count(*) from QUESTION
+### Cause: java.sql.SQLSyntaxErrorException: Table 'sms.question' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'sms.question' doesn't exist]
+2020-07-23 16:38:06.708  INFO 5176 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 5176 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:38:06.711  INFO 5176 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:38:06.845  INFO 5176 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:38:06.845  INFO 5176 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:38:09.705  INFO 5176 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:38:09.714  INFO 5176 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:38:09.714  INFO 5176 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:38:09.716  INFO 5176 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:38:09.717  INFO 5176 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:38:09.717  INFO 5176 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:38:09.720  INFO 5176 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:38:09.834  INFO 5176 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:38:09.834  INFO 5176 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2988 ms
+2020-07-23 16:38:09.898  INFO 5176 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:38:09.901  WARN 5176 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-07-23 16:38:10.032  INFO 5176 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:38:10.036  INFO 5176 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:38:10.564  INFO 5176 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 16:38:10.620  INFO 5176 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 16:38:10.964  INFO 5176 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 16:38:11.006  INFO 5176 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 16:38:11.010  INFO 5176 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 4.791 seconds (JVM running for 5.875)
+2020-07-23 16:39:54.319  INFO 8484 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 8484 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:39:54.363  INFO 8484 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:39:54.542  INFO 8484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:39:54.543  INFO 8484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:39:56.883  INFO 8484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:39:56.893  INFO 8484 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:39:56.894  INFO 8484 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:39:56.896  INFO 8484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:39:56.897  INFO 8484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:39:56.898  INFO 8484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:39:56.903  INFO 8484 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:39:57.041  INFO 8484 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:39:57.044  INFO 8484 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2500 ms
+2020-07-23 16:39:57.132  INFO 8484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:39:57.400  INFO 8484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:39:57.408  INFO 8484 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:39:58.019  INFO 8484 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 16:39:58.079  INFO 8484 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 16:39:58.363  INFO 8484 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 16:39:58.406  INFO 8484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 16:39:58.409  INFO 8484 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 4.866 seconds (JVM running for 6.643)
+2020-07-23 16:40:58.178  INFO 8484 --- [http-nio-9002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 16:40:58.179  INFO 8484 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 16:40:58.203  INFO 8484 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-07-23 16:40:58.691  WARN 8484 --- [http-nio-9002-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+### The error may exist in file [G:\Project\codedrinker\sms\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.info.sms.mapper.QuestionExtMapper.selectBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION                    order by gmt_create desc limit ?,?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3]
+2020-07-23 16:41:04.437  WARN 8484 --- [http-nio-9002-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+### The error may exist in file [G:\Project\codedrinker\sms\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.info.sms.mapper.QuestionExtMapper.selectBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION                    order by gmt_create desc limit ?,?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3]
+2020-07-23 16:41:13.564  WARN 8484 --- [http-nio-9002-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+### The error may exist in file [G:\Project\codedrinker\sms\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.info.sms.mapper.QuestionExtMapper.selectBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION                    order by gmt_create desc limit ?,?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3]
+2020-07-23 16:44:48.113  INFO 14968 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 14968 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:44:48.117  INFO 14968 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:44:48.184  INFO 14968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:44:48.185  INFO 14968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:44:50.779  INFO 14968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:44:50.787  INFO 14968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:44:50.787  INFO 14968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:44:50.789  INFO 14968 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:44:50.789  INFO 14968 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:44:50.789  INFO 14968 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:44:50.793  INFO 14968 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:44:50.874  INFO 14968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:44:50.874  INFO 14968 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2689 ms
+2020-07-23 16:44:50.925  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:44:51.020  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:44:51.023  INFO 14968 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:44:51.485  WARN 14968 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+2020-07-23 16:44:51.486  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 16:44:51.492  INFO 14968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 16:44:51.495  INFO 14968 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-07-23 16:44:51.540  INFO 14968 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-23 16:44:51.591 ERROR 14968 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.info.sms.SmsApplication.main(SmsApplication.java:13) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 61 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:595) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:475) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:615) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:180) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c849bf1f.CGLIB$sqlSessionFactory$1(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c849bf1f$$FastClassBySpringCGLIB$$e969d441.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c849bf1f.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 62 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:593) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	... 75 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.apache.ibatis.builder.SqlSourceBuilder$ParameterMappingTokenHandler.buildParameterMapping(SqlSourceBuilder.java:117) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.SqlSourceBuilder$ParameterMappingTokenHandler.handleToken(SqlSourceBuilder.java:67) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.parsing.GenericTokenParser.parse(GenericTokenParser.java:77) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.SqlSourceBuilder.parse(SqlSourceBuilder.java:45) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.defaults.RawSqlSource.<init>(RawSqlSource.java:46) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.defaults.RawSqlSource.<init>(RawSqlSource.java:40) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.xmltags.XMLScriptBuilder.parseScriptNode(XMLScriptBuilder.java:72) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:44) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:96) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	... 77 common frames omitted
+
+2020-07-23 16:45:08.085  INFO 2628 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 2628 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:45:08.088  INFO 2628 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:45:08.256  INFO 2628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:45:08.256  INFO 2628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:45:10.914  INFO 2628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:45:10.923  INFO 2628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:45:10.923  INFO 2628 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:45:10.926  INFO 2628 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:45:10.926  INFO 2628 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:45:10.926  INFO 2628 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:45:10.929  INFO 2628 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:45:11.036  INFO 2628 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:45:11.036  INFO 2628 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2780 ms
+2020-07-23 16:45:11.094  INFO 2628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:45:11.203  INFO 2628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:45:11.207  INFO 2628 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:45:11.587  WARN 2628 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+2020-07-23 16:45:11.588  INFO 2628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 16:45:11.596  INFO 2628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 16:45:11.598  INFO 2628 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-07-23 16:45:11.609  INFO 2628 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-23 16:45:11.620 ERROR 2628 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizeController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.info.sms.SmsApplication.main(SmsApplication.java:13) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\Project\codedrinker\sms\target\classes\com\info\sms\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1526) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1406) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1511) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 61 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:595) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:475) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:615) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:180) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7bbfc6a6.CGLIB$sqlSessionFactory$1(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7bbfc6a6$$FastClassBySpringCGLIB$$d74aaa5.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7bbfc6a6.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.1.1.jar:2.1.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 62 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [G:\Project\codedrinker\sms\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:593) ~[mybatis-spring-2.0.3.jar:2.0.3]
+	... 75 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: An invalid property 'jdbctype' was found in mapping #{commentcount,jdbctype=integer}.  Valid properties are javaType,jdbcType,mode,numericScale,resultMap,typeHandler,jdbcTypeName
+	at org.apache.ibatis.builder.SqlSourceBuilder$ParameterMappingTokenHandler.buildParameterMapping(SqlSourceBuilder.java:117) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.SqlSourceBuilder$ParameterMappingTokenHandler.handleToken(SqlSourceBuilder.java:67) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.parsing.GenericTokenParser.parse(GenericTokenParser.java:77) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.SqlSourceBuilder.parse(SqlSourceBuilder.java:45) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.defaults.RawSqlSource.<init>(RawSqlSource.java:46) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.defaults.RawSqlSource.<init>(RawSqlSource.java:40) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.xmltags.XMLScriptBuilder.parseScriptNode(XMLScriptBuilder.java:72) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.scripting.xmltags.XMLLanguageDriver.createSqlSource(XMLLanguageDriver.java:44) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:96) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:137) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:130) ~[mybatis-3.5.3.jar:3.5.3]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.5.3.jar:3.5.3]
+	... 77 common frames omitted
+
+2020-07-23 16:46:41.738  INFO 11288 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 11288 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:46:41.743  INFO 11288 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:46:41.822  INFO 11288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:46:41.822  INFO 11288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:46:45.295  INFO 11288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:46:45.308  INFO 11288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:46:45.309  INFO 11288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:46:45.311  INFO 11288 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:46:45.311  INFO 11288 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:46:45.312  INFO 11288 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:46:45.315  INFO 11288 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:46:45.509  INFO 11288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:46:45.509  INFO 11288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3686 ms
+2020-07-23 16:46:45.647  INFO 11288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:46:45.819  INFO 11288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:46:45.824  INFO 11288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:46:46.450  INFO 11288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 16:46:46.506  INFO 11288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 16:46:46.793  INFO 11288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 16:46:46.836  INFO 11288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 16:46:46.839  INFO 11288 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 6.118 seconds (JVM running for 7.535)
+2020-07-23 16:47:03.605  INFO 4736 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 4736 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:47:03.610  INFO 4736 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:47:03.689  INFO 4736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:47:03.690  INFO 4736 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:47:05.997  INFO 4736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:47:06.014  INFO 4736 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:47:06.014  INFO 4736 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:47:06.017  INFO 4736 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:47:06.017  INFO 4736 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:47:06.018  INFO 4736 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:47:06.048  INFO 4736 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:47:06.301  INFO 4736 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:47:06.302  INFO 4736 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2611 ms
+2020-07-23 16:47:06.416  INFO 4736 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:47:06.603  INFO 4736 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:47:06.607  INFO 4736 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:47:07.430  INFO 4736 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 16:47:07.487  INFO 4736 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 16:47:07.777  INFO 4736 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 16:47:07.821  INFO 4736 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 16:47:07.824  INFO 4736 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 4.912 seconds (JVM running for 6.007)
+2020-07-23 16:47:20.428  INFO 4736 --- [http-nio-9002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 16:47:20.429  INFO 4736 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 16:47:20.446  INFO 4736 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-07-23 16:47:20.833  WARN 4736 --- [http-nio-9002-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+### The error may exist in file [G:\Project\codedrinker\sms\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.info.sms.mapper.QuestionExtMapper.selectBySearch-Inline
+### The error occurred while setting parameters
+### SQL: select * from question                    order by gmt_create desc limit ?,?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 3]
+2020-07-23 16:55:06.588  INFO 548 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 548 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 16:55:06.592  INFO 548 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 16:55:06.695  INFO 548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 16:55:06.696  INFO 548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 16:55:09.747  INFO 548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 16:55:09.772  INFO 548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 16:55:09.773  INFO 548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 16:55:09.777  INFO 548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 16:55:09.779  INFO 548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 16:55:09.779  INFO 548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 16:55:09.783  INFO 548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 16:55:09.929  INFO 548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 16:55:09.929  INFO 548 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3232 ms
+2020-07-23 16:55:09.989  INFO 548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 16:55:10.110  INFO 548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 16:55:10.114  INFO 548 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 16:55:10.788  INFO 548 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 16:55:10.848  INFO 548 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 16:55:11.158  INFO 548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 16:55:11.197  INFO 548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 16:55:11.200  INFO 548 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 5.545 seconds (JVM running for 7.584)
+2020-07-23 16:55:16.271  INFO 548 --- [http-nio-9002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 16:55:16.272  INFO 548 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 16:55:16.352  INFO 548 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 80 ms
+2020-07-23 17:05:43.849  INFO 12616 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 12616 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 17:05:43.852  INFO 12616 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 17:05:43.987  INFO 12616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 17:05:43.987  INFO 12616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 17:05:45.901  INFO 12616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 17:05:45.909  INFO 12616 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 17:05:45.910  INFO 12616 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 17:05:45.912  INFO 12616 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 17:05:45.912  INFO 12616 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 17:05:45.912  INFO 12616 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 17:05:45.915  INFO 12616 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 17:05:46.062  INFO 12616 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 17:05:46.063  INFO 12616 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2076 ms
+2020-07-23 17:05:46.153  INFO 12616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 17:05:46.297  INFO 12616 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 17:05:46.301  INFO 12616 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 17:05:47.054  INFO 12616 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 17:05:47.135  INFO 12616 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 17:05:47.467  INFO 12616 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 17:05:47.507  INFO 12616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 17:05:47.509  INFO 12616 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 4.262 seconds (JVM running for 5.247)
+2020-07-23 17:05:53.524  INFO 12616 --- [http-nio-9002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 17:05:53.530  INFO 12616 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 17:05:53.552  INFO 12616 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-07-23 17:07:20.372  INFO 2496 --- [restartedMain] com.info.sms.SmsApplication              : Starting SmsApplication on DESKTOP-7GJK060 with PID 2496 (G:\Project\codedrinker\sms\target\classes started by ceshi in G:\Project\codedrinker\sms)
+2020-07-23 17:07:20.375  INFO 2496 --- [restartedMain] com.info.sms.SmsApplication              : No active profile set, falling back to default profiles: default
+2020-07-23 17:07:20.452  INFO 2496 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-23 17:07:20.452  INFO 2496 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-23 17:07:22.052  INFO 2496 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9002 (http)
+2020-07-23 17:07:22.060  INFO 2496 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 17:07:22.061  INFO 2496 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-07-23 17:07:22.063  INFO 2496 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-23 17:07:22.064  INFO 2496 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-23 17:07:22.064  INFO 2496 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-23 17:07:22.067  INFO 2496 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-23 17:07:22.166  INFO 2496 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 17:07:22.166  INFO 2496 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1713 ms
+2020-07-23 17:07:22.224  INFO 2496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 17:07:22.342  INFO 2496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 17:07:22.347  INFO 2496 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sms'
+2020-07-23 17:07:22.933  INFO 2496 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 17:07:22.996  INFO 2496 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-23 17:07:23.282  INFO 2496 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-23 17:07:23.325  INFO 2496 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9002 (http) with context path ''
+2020-07-23 17:07:23.329  INFO 2496 --- [restartedMain] com.info.sms.SmsApplication              : Started SmsApplication in 3.588 seconds (JVM running for 4.526)
+2020-07-23 17:07:34.350  INFO 2496 --- [http-nio-9002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 17:07:34.352  INFO 2496 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 17:07:34.371  INFO 2496 --- [http-nio-9002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms

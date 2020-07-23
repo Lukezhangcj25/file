@@ -273,3 +273,24 @@ color: #151faa;
 .publish-cursor{
     cursor: pointer;
 }
+
+.index-description{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+}
+
+
+.foot_span{
+    background: #8C8C97;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}

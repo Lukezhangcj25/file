@@ -1,12 +1,10 @@
 create table comment
 (
-	id VARCHAR(36) not null,
-	parant_id BIGINT not null,
+	id int auto_increment primary key,
+	parant_id bigint not null,
 	type int not null,
-	creator BIGINT not null,
-	gmt_create BIGINT not null,
-	gmt_modified BIGINT,
-	like_count BIGINT default 0,
-	constraint comment_pk
-		primary key (id)
+	creator bigint not null,
+	gmt_create bigint not null,
+	gmt_modified bigint,
+	like_count bigint default 0
 );

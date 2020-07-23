@@ -14,5 +14,6 @@
 [Markdown 插件]:https://pandao.github.io/editor.md/
 
 ##命令
-[flyway]:mvn flyway:migrate
+[flyway-执行脚本]:mvn flyway:migrate
+[flyway-执行失败后修复]:mvn flyway:repair
 [mybatis]:mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate

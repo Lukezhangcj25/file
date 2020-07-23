@@ -5,6 +5,7 @@ import com.info.sms.dto.GithubUser;
 import com.info.sms.model.User;
 import com.info.sms.provider.GithubProvider;
 import com.info.sms.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -20,15 +21,16 @@ import java.util.UUID;
  * Created by Luke 2020/4/1 14:23
  */
 @Controller
+@Slf4j
 public class AuthorizeController {
     @Autowired
     private GithubProvider githubProvider;
 
-    @Value("${server.Client.id}")
+    @Value("${github.Client.id}")
     private String Clientid ;
-    @Value("${server.Client.secret}")
+    @Value("${github.Client.secret}")
     private String Clientsecret;
-    @Value("${server.Redirect.uri}")
+    @Value("${github.Redirect.uri}")
     private String Redirecturi;
 
     @Autowired
@@ -70,6 +72,7 @@ public class AuthorizeController {
             // url显示index地址而不是带有get参数的地址
             return "redirect:/";
         }else{
+            log.error("callback get github error,{}",githubUser);
             // 登录失败，重新登录
             return "redirect:/";
         }

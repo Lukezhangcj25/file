@@ -2,6 +2,7 @@ package com.info.sms.service;
 
 import com.info.sms.dto.PaginationDTO;
 import com.info.sms.dto.QuestionDTO;
+import com.info.sms.dto.QuestionQueryDTO;
 import com.info.sms.exception.CustomizeErrorCode;
 import com.info.sms.exception.CustomizeException;
 import com.info.sms.mapper.QuestionExtMapper;
@@ -37,11 +38,22 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
 
 
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(Integer page, Integer size,String search) {
+
+        if(StringUtils.isNotBlank(search)){
+            String[] tags = StringUtils.split(search," ");
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
 
         PaginationDTO paginationDTO = new PaginationDTO();
-        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+        // Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
         Integer totalPage;
+
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
+
+
 
         // 如果总数据数  取余 每页显示数量为0，页数为数据总数除以每页数量的值
         // 如果总数据数  取余 每页显示数量不为0，页数为数据总数除以每页数量的值 + 1
@@ -60,10 +72,13 @@ public class QuestionService {
         }
         paginationDTO.setPagination(totalPage, page);
 
-        Integer offset = size * (page - 1);
+        Integer offset = page < 1 ? 0: size * (page - 1);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
+        //List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
+        questionQueryDTO.setSize(size);
+        questionQueryDTO.setPage(offset);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
 
@@ -103,7 +118,7 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage, page);
 
 
-        Integer offset = size * (page - 1);
+        Integer offset = page < 1 ? 0: size * (page - 1);
 
 
         QuestionExample example = new QuestionExample();
