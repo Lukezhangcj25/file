@@ -29,7 +29,7 @@
   </update>
 
     <select id="selectRelated" parameterType="com.info.sms.model.Question" resultMap="BaseResultMap">
-    select top 10 * from question where id != #{id} and tag regexp #{tag}
+    select * from question where id != #{id} and tag regexp #{tag} limit 0,10
   </select>
 
     <select id="countBySearch" parameterType="com.info.sms.dto.QuestionQueryDTO" resultType="java.lang.Integer">
