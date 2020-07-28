@@ -50,7 +50,9 @@ public class QuestionService {
         Integer totalPage;
 
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
-        questionQueryDTO.setSearch(search);
+        if(search != null){
+            questionQueryDTO.setSearch(search);
+        }
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
 

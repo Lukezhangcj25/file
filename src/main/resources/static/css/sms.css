@@ -285,7 +285,7 @@ color: #151faa;
 
 
 .foot_span{
-    background: #8C8C97;
+    background: #d8d8d8;
     font-size: 12px;
     text-align: center;
     padding: 2px 0;
@@ -293,4 +293,8 @@ color: #151faa;
     bottom: 0;
     width: 100%;
     left: 0;
+}
+
+.index-min{
+    min-height: 35%;
 }
