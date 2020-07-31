@@ -38,10 +38,10 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
 
 
-    public PaginationDTO list(Integer page, Integer size,String search) {
+    public PaginationDTO list(Integer page, Integer size, String search, String hot) {
 
-        if(StringUtils.isNotBlank(search)){
-            String[] tags = StringUtils.split(search," ");
+        if (StringUtils.isNotBlank(search)) {
+            String[] tags = StringUtils.split(search, " ");
             search = Arrays.stream(tags).collect(Collectors.joining("|"));
         }
 
@@ -50,11 +50,11 @@ public class QuestionService {
         Integer totalPage;
 
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
-        if(search != null){
+        if (search != null) {
             questionQueryDTO.setSearch(search);
+            questionQueryDTO.setTag(hot);
         }
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
-
 
 
         // 如果总数据数  取余 每页显示数量为0，页数为数据总数除以每页数量的值
@@ -74,7 +74,7 @@ public class QuestionService {
         }
         paginationDTO.setPagination(totalPage, page);
 
-        Integer offset = page < 1 ? 0: size * (page - 1);
+        Integer offset = page < 1 ? 0 : size * (page - 1);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
         //List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
@@ -120,7 +120,7 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage, page);
 
 
-        Integer offset = page < 1 ? 0: size * (page - 1);
+        Integer offset = page < 1 ? 0 : size * (page - 1);
 
 
         QuestionExample example = new QuestionExample();

@@ -4,12 +4,19 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
+    <classPathEntry location="G:\Project\maven-SMS\repository\com\mysql\mysql-connector-java\8.0.18\mysql-connector-java-8.0.18.jar"/>
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
-        <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/sms"
-                        userId="sa"
-                        password="123">
+<!--        <jdbcConnection driverClass="org.h2.Driver"-->
+<!--                        connectionURL="jdbc:h2:~/sms"-->
+<!--                        userId="sa"-->
+<!--                        password="123">-->
+<!--        </jdbcConnection>-->
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/sms"
+                        userId="root"
+                        password="536Df547">
         </jdbcConnection>
 
         <javaTypeResolver >
@@ -33,5 +40,7 @@
         <table tableName="question" domainObjectName="Question" ></table>
         <table tableName="comment" domainObjectName="Comment" ></table>
         <table tableName="notification" domainObjectName="Notification" ></table>
+        <table tableName="ad" domainObjectName="Ad" ></table>
+
     </context>
 </generatorConfiguration>

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component(value = "")
+@Component(value = "questionExtMapper")
 public interface QuestionExtMapper {
     int incView(Question record);
     int incComment(Question record);

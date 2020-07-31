@@ -3,6 +3,8 @@ package com.info.sms.interceptor;
 import com.info.sms.mapper.UserMapper;
 import com.info.sms.model.User;
 import com.info.sms.model.UserExample;
+import com.info.sms.service.AdService;
+import com.info.sms.service.NavService;
 import com.info.sms.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -25,8 +28,20 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private NotificationService notificationService;
 
+    @Autowired
+    private AdService adService;
+
+//    @Autowired
+//    private RedirectUri redirectUri;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        // 设置 context 级别的属性
+        // request.getServletContext().setAttribute("redirectUri",redirectUri);
+
+        // 没有登陆的时候也可以查看导航
+        HttpSession session = request.getSession();
+        session.setAttribute("ads",adService.list());
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length != 0) {
             for (Cookie cookie : cookies) {

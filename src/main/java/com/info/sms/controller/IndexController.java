@@ -31,13 +31,15 @@ public class IndexController {
                         HttpServletRequest request,
                         @RequestParam(name="page",defaultValue = "1") Integer page,
                         @RequestParam(name="size",defaultValue = "5") Integer size,
-                        @RequestParam(name="search",required = false) String search
+                        @RequestParam(name="search",required = false) String search,
+                        @RequestParam(name="hot",required = false) String hot
                         ) {
-        PaginationDTO pagination = questionService.list(page,size,search);
+        PaginationDTO pagination = questionService.list(page,size,search,hot);
         List<String> hots = hotTagCache.getHots();
         model.addAttribute("pagination", pagination);
         model.addAttribute("search",search);
         model.addAttribute("hots",hots);
+        model.addAttribute("hot",hot);
         return "index";
     }
 }
